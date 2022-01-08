@@ -9,6 +9,21 @@ namespace Lab6_3sem
         private string Surname = "";
         private string Name = "";
         private string Patronymic = "";
+        public string name
+        {
+            get => Name;
+            set => Name = value;
+        }
+        public string surname
+        {
+            get => Surname;
+            set => Surname = value;
+        }
+        public string patronymic
+        {
+            get => Patronymic;
+            set => Patronymic = value;
+        }
         public Teacher()
         {
             Surname = "";

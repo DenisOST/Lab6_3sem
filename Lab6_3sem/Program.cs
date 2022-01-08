@@ -127,6 +127,25 @@ namespace Lab6_3sem
 
 			Groups.AverageMarkStudent();
 			Console.WriteLine();
+
+			Console.WriteLine("10) Для полей добавить свойства и продемонстрировать работу с ними");
+			Teacher TeacherForTest = new Teacher();
+			TeacherForTest.surname = "Хомяков";
+			TeacherForTest.name = "Никита";
+			TeacherForTest.patronymic = "Иванович";
+			TeacherForTest.OutputTeacher();
+			Console.WriteLine();
+
+			Console.WriteLine("11) Cоздать массив объектов и продемонстрировать работу с ним");
+			Teachers[0].Set("Попова", "Ирина", "Андреевна");
+			Teachers[1].Set("Иванова", "Елена", "Сергеевна");
+			Teachers[2].Set("Буянов", "Виталий", "Юрьевич");
+			for (i = 0; i < 3; i++)
+			{
+				Teachers[i].OutputTeacher();
+				Console.WriteLine();
+			}
+			Console.WriteLine();
 		}
     }
 }
