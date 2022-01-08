@@ -4,13 +4,12 @@ using System.Text;
 
 namespace Lab6_3sem
 {
-    public class Mark
+    public struct Mark
     {
-        private int Number = 0;
-
-        public Mark()
+        private int Number;
+        public Mark(int Value)
         {
-            Number = 0;
+            Number = Value;
         }
         public int Get()
         {

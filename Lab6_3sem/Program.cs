@@ -146,6 +146,38 @@ namespace Lab6_3sem
 				Console.WriteLine();
 			}
 			Console.WriteLine();
+
+			Console.WriteLine("12) В отдельной ветке проекта заменить класс (class) на структуру (struct). Продемонстрировать различие между присваиванием объектов класса и структуры;");
+			Mark MarkFor12 = new Mark();
+			Teacher TeacherFor12 = new Teacher();
+			MarkFor12.Set(90);
+			TeacherFor12.Set("Мукин", "Василий", "Витальевич");
+			Console.WriteLine("Элемент структуры до копирования:");
+			MarkFor12.OutputMark();
+			Console.WriteLine("Элемент класса до копирования:");
+			TeacherFor12.OutputTeacher();
+			Console.WriteLine("Элемент структуры копируется на:");
+			Marks1[0].OutputMark();
+			Console.WriteLine("Элемент класса копируется на:");
+			Teachers[0].OutputTeacher();
+			Console.Write("\n");
+			MarkFor12 = Marks1[0];
+			TeacherFor12 = Teachers[0];
+			Console.WriteLine("Элемент структуры после копирования:");
+			MarkFor12.OutputMark();
+			Console.WriteLine("Элемент класса после копирования:");
+			TeacherFor12.OutputTeacher();
+			Console.Write("\n");
+			Console.WriteLine("Если изменить те объекты, на которые менялись объект класса и структуры:");
+			Marks1[0].Set(75);
+			Teachers[0].Set("Краснов", "Николай", "Михайлович");
+			Marks1[0].OutputMark();
+			Teachers[0].OutputTeacher();
+			Console.Write("\n");
+			Console.WriteLine("То новые объекты будут таковыми:");
+			MarkFor12.OutputMark();
+			TeacherFor12.OutputTeacher();
+			Console.WriteLine("Объект класса изменился, потому что копируется ссылка на объект, а объект структуры не изменился, т.к. копируются значения полей.");
 		}
     }
 }
