@@ -62,5 +62,11 @@ namespace Lab6_3sem
         {
             Console.Write("ФИО преподавателя: " + Surname + " " + Name + " " + Patronymic + "\n");
         }
+        public void ShowingWorkingWithString()
+        {
+            Surname = Surname + "Демонстрация";
+            Name = Name + "работы со";
+            Patronymic = Patronymic + "строками :)";
+        }
     }
 }

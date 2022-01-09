@@ -4,16 +4,16 @@ namespace Lab6_3sem
 {
     class Program
     {
-        static void Main(string[] args)
-        {
+		static void Main(string[] args)
+		{
 			int i;
 
 			Teacher[] Teachers = new Teacher[3];
 
 			for (i = 0; i < 3; i++)
-            {
+			{
 				Teachers[i] = new Teacher();
-            }
+			}
 
 			Teachers[0].Set("Попова", "Ирина", "Андреевна");
 			Teachers[1].Set("Иванова", "Елена", "Сергеевна");
@@ -35,8 +35,8 @@ namespace Lab6_3sem
 				Disciplines[i].AddTeacherToDiscipline(Teachers[i]);
 			}
 
-			Mark[] Marks1 = new Mark[3]; 
-			Mark[] Marks2 = new Mark[3]; 
+			Mark[] Marks1 = new Mark[3];
+			Mark[] Marks2 = new Mark[3];
 			Mark[] Marks3 = new Mark[3];
 
 			for (i = 0; i < 3; i++)
@@ -103,7 +103,7 @@ namespace Lab6_3sem
 			{
 				Groups.AddStudentToGroup(Students[i]);
 			}
-
+			
 			for (i = 0; i < 3; i++)
 			{
 				Teachers[i].OutputTeacher();
@@ -146,6 +146,74 @@ namespace Lab6_3sem
 				Console.WriteLine();
 			}
 			Console.WriteLine();
+
+			Console.WriteLine("13) Cоздать массив объектов и продемонстрировать работу с ним");
+			Mark[][] MarkFor13 = new Mark[1][];
+			MarkFor13[0] = new Mark[3];
+			for (i = 0; i < 3; i++)
+			{
+				MarkFor13[0][i] = new Mark();
+			}
+			Console.Write("Массив баллов:\n");
+			for (i = 0; i < 3; i++)
+			{
+				MarkFor13[0][i].Set(i*5 + 50);
+				MarkFor13[0][i].OutputMark();
+			}
+			Console.WriteLine();
+
+			Console.WriteLine("14) Продемонстрировать возврат значения через параметр out и через параметр ref. Показать различие этих механизмов");
+			Console.Write("На примере структуры оценка\n");
+			Mark markForRef = new Mark();
+			Mark markForOut = new Mark();
+			int ArgRef = 2;
+			int ArgOut;
+			markForRef.Set(1);
+			markForRef.TestRef(ref ArgRef);
+			Console.WriteLine("Аргумент функции после использования по ref: " + ArgRef);
+			markForOut.Set(2);
+			markForOut.TestOut(out ArgOut);
+			Console.WriteLine("Аргумент функции после использования по out: " + ArgOut);
+			Console.WriteLine();
+
+			Console.WriteLine("15) Продемонстрировать разумное использование оператора this;");
+			Mark A = new Mark();
+			Mark B = new Mark();
+			Mark C = new Mark();
+			Mark D = new Mark();
+			A.Set(10);
+			B.Set(20);
+			C.Set(30);
+			D.Set(40);
+			Mark.NewList();
+			// Вызов статической компанентной функции:
+			Mark.Reprint();
+			// Включение созданных компанентов в двусвязанный список:
+			A.Add(); B.Add(); C.Add(); D.Add();
+			// Печать в обратном порядке значений элементов списка:
+			Mark.Reprint();
+			Console.WriteLine();
+
+			Console.WriteLine("16) Продемонстрировать перегрузку операторов '+', '++'");
+			Mark MarkPlus = new Mark();
+			MarkPlus.Set(50);
+			MarkPlus.OutputMark();
+			Console.WriteLine("Оператор + (прибавим 10 баллов):");
+			MarkPlus = MarkPlus + 10;
+			MarkPlus.OutputMark();
+			Console.WriteLine("Оператор ++ префиксный:");
+			++MarkPlus;
+			MarkPlus.OutputMark();
+			Console.WriteLine("Оператор ++ постфиксный:");
+			MarkPlus++;
+			MarkPlus.OutputMark();
+			Console.WriteLine();
+
+			Console.WriteLine("17) Продемонстрировать обработку строк (string)");
+			Teacher TeacherString = new Teacher();
+			TeacherString.Set("", "", "");
+			TeacherString.ShowingWorkingWithString();
+			TeacherString.OutputTeacher();
 		}
     }
 }
