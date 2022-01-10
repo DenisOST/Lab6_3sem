@@ -9,6 +9,21 @@ namespace Lab6_3sem
         private string Surname = "";
         private string Name = "";
         private string Patronymic = "";
+        public string name
+        {
+            get => Name;
+            set => Name = value;
+        }
+        public string surname
+        {
+            get => Surname;
+            set => Surname = value;
+        }
+        public string patronymic
+        {
+            get => Patronymic;
+            set => Patronymic = value;
+        }
         public Teacher()
         {
             Surname = "";
@@ -46,6 +61,12 @@ namespace Lab6_3sem
         public void OutputTeacher()
         {
             Console.Write("ФИО преподавателя: " + Surname + " " + Name + " " + Patronymic + "\n");
+        }
+        public void ShowingWorkingWithString()
+        {
+            Surname = Surname + "Демонстрация";
+            Name = Name + "работы со";
+            Patronymic = Patronymic + "строками :)";
         }
     }
 }
