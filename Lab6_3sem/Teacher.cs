@@ -30,6 +30,18 @@ namespace Lab6_3sem
             Name = "";
             Patronymic = "";
         }
+        public Teacher(string surname)
+        {
+            Surname = surname;
+            Name = "";
+            Patronymic = "";
+        }
+        public Teacher(string surname, string name, string patronymic)
+        {
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+        }
         public string GetSurname()
         {
             return Surname;
@@ -46,6 +58,18 @@ namespace Lab6_3sem
         {
             Surname = surname;
             Name = name;
+            Patronymic = patronymic;
+        }
+        public void SetSurname(string surname)
+        {
+            Surname = surname;
+        }
+        public void SetName(string name)
+        {
+            Name = name;
+        }
+        public void SetPatronymic(string patronymic)
+        {
             Patronymic = patronymic;
         }
         public void InputTeacher()

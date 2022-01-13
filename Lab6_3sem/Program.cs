@@ -26,9 +26,9 @@ namespace Lab6_3sem
 				Disciplines[i] = new Discipline();
 			}
 
-			Disciplines[0].Set("Программирование");
-			Disciplines[1].Set("Математика");
-			Disciplines[2].Set("Экономика");
+			Disciplines[0].SetName("Программирование");
+			Disciplines[1].SetName("Математика");
+			Disciplines[2].SetName("Экономика");
 
 			for (i = 0; i < 3; i++)
 			{
@@ -103,6 +103,58 @@ namespace Lab6_3sem
 			{
 				Groups.AddStudentToGroup(Students[i]);
 			}
+
+			Teacher Teacher1 = new Teacher();
+			Teacher Teacher2 = new Teacher("Сталин");
+			Teacher Teacher3 = new Teacher("Жмышенко", "Василий", "Витальевич");
+
+			Teacher1.OutputTeacher();
+			Console.WriteLine();
+			Teacher2.OutputTeacher();
+			Console.WriteLine();
+			Teacher3.OutputTeacher();
+			Console.WriteLine("\n\n");
+
+			Discipline Discipline1 = new Discipline();
+			Discipline Discipline2 = new Discipline("Бориков");
+			Discipline Discipline3 = new Discipline("Химия", Teacher3);
+
+			Discipline1.OutputDiscipline();
+			Console.WriteLine();
+			Discipline2.OutputDiscipline();
+			Console.WriteLine();
+			Discipline3.OutputDiscipline();
+			Console.WriteLine("\n\n");
+
+			Mark Mark1 = new Mark();
+			Mark Mark2 = new Mark(65);
+
+			Mark1.OutputMark();
+			Console.WriteLine();
+			Mark2.OutputMark();
+			Console.WriteLine("\n\n");
+
+			Student Student1 = new Student();
+			Student Student2 = new Student("Лупин");
+			Student Student3 = new Student("Пупин", "Андрей", "Васильевич", Marks2, 3, Disciplines, 3);
+
+			Student1.OutputStudent();
+			Console.WriteLine();
+			Student2.OutputStudent();
+			Console.WriteLine();
+			Student3.OutputStudent();
+			Console.WriteLine("\n\n");
+
+			Group Group1 = new Group();
+			Group Group2 = new Group("ПИ-02");
+			Group Group3 = new Group("ПИ-03", Students, 3);
+
+			Group1.OutputGroup();
+			Console.WriteLine();
+			Group2.OutputGroup();
+			Console.WriteLine();
+			Group3.OutputGroup();
+			Console.WriteLine("\n\n");
 
 			/*
 			for (i = 0; i < 3; i++)
@@ -215,7 +267,6 @@ namespace Lab6_3sem
 			TeacherString.Set("", "", "");
 			TeacherString.ShowingWorkingWithString();
 			TeacherString.OutputTeacher();
-			*/
 
 			Console.WriteLine("Модифицировать ваши проекты на С++, C# и Java путем добавления в один из классов как минимум одного статического поля и одного статического метода.");
 			Mark A = new Mark();
@@ -234,6 +285,7 @@ namespace Lab6_3sem
 			// Печать в обратном порядке значений элементов списка:
 			Mark.Reprint();
 			Console.WriteLine();
+			*/
 		}
-    }
+	}
 }

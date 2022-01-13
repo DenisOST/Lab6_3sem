@@ -15,6 +15,10 @@ namespace Lab6_3sem
         {
             Number = 0;
         }
+        public Mark(int M)
+        {
+            Number = M;
+        }
         public int Get()
         {
             return Number;
