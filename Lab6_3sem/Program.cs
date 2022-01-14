@@ -104,6 +104,9 @@ namespace Lab6_3sem
 				Groups.AddStudentToGroup(Students[i]);
 			}
 
+			Console.WriteLine("Лабораторная работа №9:");
+			Console.WriteLine("2) Продемонстрировать вызов всех конструкторов");
+
 			Teacher Teacher1 = new Teacher();
 			Teacher Teacher2 = new Teacher("Сталин");
 			Teacher Teacher3 = new Teacher("Жмышенко", "Василий", "Витальевич");
@@ -154,6 +157,14 @@ namespace Lab6_3sem
 			Group2.OutputGroup();
 			Console.WriteLine();
 			Group3.OutputGroup();
+			Console.WriteLine("\n\n");
+
+			Console.WriteLine("3) Инициализировать небольшой массив конструктором с одним параметром");
+			Teacher[] teacherArr = new Teacher[3];
+			for (int j = 0; j < 3; j++)
+				teacherArr[j] = new Teacher("Иванов" + (j + 1));
+			for (int j = 0; j < 3; j++)
+				teacherArr[j].OutputTeacher();
 			Console.WriteLine("\n\n");
 
 			/*
