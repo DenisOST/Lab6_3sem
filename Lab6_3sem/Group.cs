@@ -19,6 +19,36 @@ namespace Lab6_3sem
                 student[i].SetStudent("", "", "");
             }
         }
+
+        public Group(string name)
+        {
+            Name = name;
+            for (int i = 0; i < 30; i++)
+            {
+                student[i] = new Student();
+                student[i].SetStudent("", "", "");
+            }
+        }
+        public Group(string name, Student[] s, int q)
+        {
+            Name = name;
+            Quantity = 0;
+            for (int i = 0; i < 30; i++)
+            {
+                student[i] = new Student();
+                student[i].SetStudent("", "", "");
+            }
+            for (int i = 0; i < 30 && i < q; i++)
+            {
+                student[i] = new Student();
+                student[i].SetStudent("", "", "");
+            }
+            for (int i = 0; i < 30 && i < q; i++)
+            {
+                student[i] = s[i];
+                Quantity++;
+            }
+        }
         public string GetName()
         {
             return Name;
@@ -35,14 +65,26 @@ namespace Lab6_3sem
         {
             return Quantity;
         }
+        public void Set(string name, Student[] s, int q)
+        {
+            Name = name;
+            for (int i = 0; i < 30 && i < q; i++)
+            {
+                student[i] = s[i];
+                Quantity++;
+            }
+        }
         public void SetGroup(string name)
         {
             Name = name;
+        }
+        public void SetStudent(Student[] s)
+        {
             for (int i = 0; i < 30; i++)
             {
-                student[i].SetStudent("", "", "");
+                student[i] = s[i];
+                Quantity++;
             }
-            Quantity = 0;
         }
         public void InputGroup()
         {
