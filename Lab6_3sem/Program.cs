@@ -8,6 +8,16 @@ namespace Lab6_3sem
 		{
 			int i;
 
+			Mark mark1 = new Mark();
+			Console.WriteLine("Лабораторная 10\n");
+			Console.WriteLine("Придумать разумное использование в ваших проектах защищенных блоков (try-блоки), перехватов исключений (catch-блоки) и инициализации исключений (инструкция throw)\n");
+			Console.WriteLine("Введите оценку - число в пределах от 0 до 100!\n");
+			while (mark1.Get() == 0)
+			{
+				mark1.InputMark();
+			}
+			Console.WriteLine("Введенная оценка: " + mark1.Get());
+
 			Teacher[] Teachers = new Teacher[3];
 
 			for (i = 0; i < 3; i++)
@@ -103,7 +113,7 @@ namespace Lab6_3sem
 			{
 				Groups.AddStudentToGroup(Students[i]);
 			}
-
+			/*
 			Console.WriteLine("Лабораторная работа №9:");
 			Console.WriteLine("2) Продемонстрировать вызов всех конструкторов");
 

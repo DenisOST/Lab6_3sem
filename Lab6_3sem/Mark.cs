@@ -18,6 +18,8 @@ namespace Lab6_3sem
         public Mark(int M)
         {
             Number = M;
+            if (IsRightMark(M))
+                Number = M;
         }
         public int Get()
         {
@@ -25,14 +27,32 @@ namespace Lab6_3sem
         }
         public void Set(int M)
         {
-            Number = M;
+            Number = 0;
+            if (IsRightMark(M))
+                Number = M;
         }
         public void InputMark()
         {
-            this.Set(0);
+            string mark;
             Console.Write("Введите балл: ");
-            Number = Convert.ToInt32(Console.ReadLine());
+            mark = Console.ReadLine();
+            // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+            try
+            {
+                for (int i = 0; i < mark.Length; i++)
+                {
+                    if ((mark[i] < '0') || (mark[i] > '9'))
+                        throw new Exception("It string is not number!"); // выбрасывается исключение
+                }
+                Set(Convert.ToInt32(mark));
+            }
+            catch (Exception ex) // обработчик исключений типа const char*
+            {
+                Console.Write("Error: " + ex.Message + '\n');
+                //std::cerr << "Error: " << "It string is not number!" << '\n';
+            }
         }
+    
         public void OutputMark()
         {
             Console.Write("Балл: " + Number + "\n");
@@ -110,5 +130,23 @@ namespace Lab6_3sem
             }
         }
 
+        // Проверка числа на подходяее для оценки
+        public bool IsRightMark(int mark)
+        {
+            bool res = true;
+            try // ищем исключения внутри этого блока и отправляем их в соответствующий обработчик catch
+            {
+                if (mark < 0 || mark > 100) // Если пользователь ввел неверное число, то выбрасывается исключение
+                    throw new Exception("Incorrect value."); // выбрасывается исключение типа const char*
+                return res;
+            }
+            catch (Exception ex) // обработчик исключений типа const char*
+            {
+                Console.WriteLine("Error: " + ex.Message + '\n');
+                res = false;
+                return res;
+            }
+            //return res;
+        }
     }
 }
