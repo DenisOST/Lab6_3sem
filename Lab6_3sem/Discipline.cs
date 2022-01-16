@@ -14,6 +14,16 @@ namespace Lab6_3sem
             Name = "";
             teacher.Set("", "", "");
         }
+        public Discipline(string name)
+        {
+            Name = name;
+            teacher.Set("", "", "");
+        }
+        public Discipline(string name, Teacher t)
+        {
+            Name = name;
+            teacher = t;
+        }
         public string GetDiscipline()
         {
             return Name;
@@ -22,14 +32,22 @@ namespace Lab6_3sem
         {
             return teacher;
         }
-        public void Set(string name)
+        public void Set(string name, Teacher t)
         {
             Name = name;
-            teacher.Set("", "", "");
+            teacher = t;
+        }
+        public void SetName(string name)
+        {
+            Name = name;
+        }
+        public void SetTeacher(Teacher t)
+        {
+            teacher = t;
         }
         public void InputDiscipline(Teacher Teacher)
         {
-            this.Set("");
+            this.SetName("");
             Console.Write("Введите название дисциплины: ");
             Name = Console.ReadLine();
             teacher = Teacher;

@@ -25,7 +25,47 @@ namespace Lab6_3sem
             for (int i = 0; i < 10; i++)
             {
                 discipline[i] = new Discipline();
-                discipline[i].Set("");
+                discipline[i].SetName("");
+            }
+        }
+        public Student(string surname)
+        {
+            Surname = surname;
+            Name = "";
+            Patronymic = "";
+            for (int i = 0; i < 10; i++)
+            {
+                mark[i] = new Mark();
+                mark[i].Set(0);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                discipline[i] = new Discipline();
+                discipline[i].SetName("");
+            }
+        }
+        public Student(string surname, string name, string patronymic, Mark[] m, int M, Discipline[] d, int D)
+        {
+            Surname = surname;
+            Name = name;
+            Patronymic = patronymic;
+            for (int i = 0; i < 10; i++)
+            {
+                mark[i] = new Mark();
+                mark[i].Set(0);
+            }
+            for (int i = 0; i < 10; i++)
+            {
+                discipline[i] = new Discipline();
+                discipline[i].SetName("");
+            }
+            for (int i = 0; i < 10 && i < M; i++)
+            {
+                mark[i] = m[i];
+            }
+            for (int i = 0; i < 10 && i < D; i++)
+            {
+                discipline[i] = d[i];
             }
         }
         public string GetSurname()
@@ -69,7 +109,37 @@ namespace Lab6_3sem
 
             for (int i = 0; i < 10; i++)
             {
-                discipline[i].Set("");
+                discipline[i].SetName("");
+            }
+        }
+        public void SetSurname(string surname)
+        {
+            Surname = surname;
+        }
+
+        public void SetName(string name)
+        {
+            Name = name;
+        }
+
+        public void SetPatronymic(string patronymic)
+        {
+            Patronymic = patronymic;
+        }
+
+        public void SetMark(Mark[] m)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                mark[i] = m[i];
+            }
+        }
+
+        public void SetDiscipline(Discipline[] d)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                discipline[i] = d[i];
             }
         }
         public void InputStudent()
