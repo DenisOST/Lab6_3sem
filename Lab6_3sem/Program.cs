@@ -8,6 +8,41 @@ namespace Lab6_3sem
 		{
 			int i;
 
+			Mark[] MarkFor11_1 = new Mark[5];
+			Mark[,] MarkFor11_2 = new Mark[2,2];
+
+			MarkFor11_1[0] = new Mark();
+			MarkFor11_1[1] = new Mark();
+			MarkFor11_1[2] = new Mark();
+			MarkFor11_1[3] = new Mark();
+			MarkFor11_1[4] = new Mark();
+			MarkFor11_2[0, 0] = new Mark();
+			MarkFor11_2[0, 1] = new Mark();
+			MarkFor11_2[1, 0] = new Mark();
+			MarkFor11_2[1, 1] = new Mark();
+
+			MarkFor11_1[0].Set(10);
+			MarkFor11_1[1].Set(20);
+			MarkFor11_1[2].Set(30);
+			MarkFor11_1[3].Set(40);
+			MarkFor11_1[4].Set(50);
+
+			MarkFor11_2[0, 0].Set(60);
+			MarkFor11_2[0, 1].Set(70);
+			MarkFor11_2[1, 0].Set(80);
+			MarkFor11_2[1, 1].Set(90);
+
+			Console.WriteLine("Одномерный массив: ");
+			for (i = 0; i < 5; i++)
+				MarkFor11_1[i].OutputMark();
+
+			Console.WriteLine();
+			Console.WriteLine("Двумерный массив: ");
+			for (i = 0; i < 2; i++)
+				for (int j = 0; j < 2; j++)
+					MarkFor11_2[i, j].OutputMark();
+			Console.WriteLine();
+			/*
 			Mark mark1 = new Mark();
 			Console.WriteLine("Лабораторная 10\n");
 			Console.WriteLine("Придумать разумное использование в ваших проектах защищенных блоков (try-блоки), перехватов исключений (catch-блоки) и инициализации исключений (инструкция throw)\n");

@@ -49,7 +49,6 @@ namespace Lab6_3sem
             catch (Exception ex) // обработчик исключений типа const char*
             {
                 Console.Write("Error: " + ex.Message + '\n');
-                //std::cerr << "Error: " << "It string is not number!" << '\n';
             }
         }
     
@@ -146,7 +145,6 @@ namespace Lab6_3sem
                 res = false;
                 return res;
             }
-            //return res;
         }
     }
 }
