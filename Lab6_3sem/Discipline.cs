@@ -67,7 +67,7 @@ namespace Lab6_3sem
         public void OutputDiscipline()
         {
             Console.Write("Название дисциплины: " + Name + "\n");
-            teacher.OutputTeacher();
+            teacher.OutputInformation();
         }
     }
 }

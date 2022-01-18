@@ -4,19 +4,19 @@ using System.Text;
 
 namespace Lab6_3sem
 {
-    public class Student
+    public class Student : Person
     {
-        private string Surname = "";
-        private string Name = "";
-        private string Patronymic = "";
+        //private string Surname = "";
+        //private string Name = "";
+        //private string Patronymic = "";
         private Mark[] mark = new Mark[10];
         private Discipline[] discipline = new Discipline[10];
 
-        public Student()
+        public Student() : base("", "", "")
         {
-            Surname = "";
-            Name = "";
-            Patronymic = "";
+            //Surname = "";
+            //Name = "";
+            //Patronymic = "";
             for (int i = 0; i < 10; i++)
             {
                 mark[i] = new Mark();
@@ -28,11 +28,11 @@ namespace Lab6_3sem
                 discipline[i].SetName("");
             }
         }
-        public Student(string surname)
+        public Student(string surname) : base(surname,"", "")
         {
-            Surname = surname;
-            Name = "";
-            Patronymic = "";
+            //Surname = surname;
+            //Name = "";
+            //Patronymic = "";
             for (int i = 0; i < 10; i++)
             {
                 mark[i] = new Mark();
@@ -44,11 +44,11 @@ namespace Lab6_3sem
                 discipline[i].SetName("");
             }
         }
-        public Student(string surname, string name, string patronymic, Mark[] m, int M, Discipline[] d, int D)
+        public Student(string surname, string name, string patronymic, Mark[] m, int M, Discipline[] d, int D) : base(surname, name, patronymic)
         {
-            Surname = surname;
-            Name = name;
-            Patronymic = patronymic;
+            //Surname = surname;
+            //Name = name;
+            //Patronymic = patronymic;
             for (int i = 0; i < 10; i++)
             {
                 mark[i] = new Mark();
@@ -142,7 +142,7 @@ namespace Lab6_3sem
                 discipline[i] = d[i];
             }
         }
-        public void InputStudent()
+        public override void InputFIO()
         {
             this.SetStudent("", "", "");
             Console.Write("Введите фамилию студента: ");
@@ -191,7 +191,7 @@ namespace Lab6_3sem
 
             return flag;
         }
-        public void OutputStudent()
+        public override void OutputInformation()
         {
             Console.Write("ФИО студента: " + Surname + " " + Name + " " + Patronymic + "\n");
             Console.Write("Дисциплины: ");
@@ -210,6 +210,11 @@ namespace Lab6_3sem
                 i++;
             }
             Console.Write("\n");
+        }
+
+        public override string WhoIs()
+        {
+            return "Студент";
         }
     }
 }

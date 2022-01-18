@@ -8,6 +8,123 @@ namespace Lab6_3sem
 		{
 			int i;
 
+			Console.WriteLine("8) В проектах на C++,  Java, C# придумать разумное использовани\nабстрактного класса и создать его. Продемонстрировать его использование");
+			Teacher TeacherFor8 = new Teacher();
+			TeacherFor8.InputFIO();
+			Console.WriteLine();
+			TeacherFor8.OutputInformation();
+
+			Console.WriteLine("9) В  проектах Java, C# придумать разумное использование интерфейсов. Продемонстрировать их использование");
+			Teacher TeacherFor9 = new Teacher();
+			Student StudentFor9 = new Student();
+			TeacherFor9.InputFIO();
+			Console.WriteLine();
+			StudentFor9.InputFIO();
+			Console.WriteLine();
+			TeacherFor9.OutputInformation();
+			Console.WriteLine();
+			StudentFor9.OutputInformation();
+			Console.WriteLine();
+			Console.WriteLine(TeacherFor9.WhoIs());
+			Console.WriteLine(StudentFor9.WhoIs());
+
+			Console.WriteLine("10) Продемонстрировать различие между мелким и глубоким копированием:");
+			Teacher TeacherFor10_1 = new Teacher("Сергеев", "Юрий", "Владимирович");
+			Teacher TeacherFor10_2 = new Teacher("Буянов", "Виталий", "Юрьевич");
+			TeacherFor10_2 = TeacherFor10_1;
+			Console.WriteLine("Поверхностная копия 1-го объекта во 2-ой:");
+			TeacherFor10_1.OutputInformation();
+			TeacherFor10_2.OutputInformation();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			TeacherFor10_1.Set("Попова", "Ирина", "Андреевна");
+			TeacherFor10_1.OutputInformation();
+			TeacherFor10_2.OutputInformation();
+			Console.WriteLine("");
+			TeacherFor10_1.Set("Пупин", "Андрей", "Васильевич");
+			TeacherFor10_2 = TeacherFor10_1.DeepCopy();
+			Console.WriteLine("Глубокая копия 1-го объекта во 2-ой:");
+			TeacherFor10_1.OutputInformation();
+			TeacherFor10_2.OutputInformation();
+			Console.WriteLine("");
+			Console.WriteLine("Изменение 1-го объекта, а 2-ой не трогается:");
+			TeacherFor10_1.Set("Андреев", "Сергей", "Васильевич");
+			TeacherFor10_1.OutputInformation();
+			TeacherFor10_2.OutputInformation();
+			Console.WriteLine("\n\n");
+
+
+			/*
+			Person PersonFor2 = new Person();
+
+			Console.WriteLine("3) Продемонстрировать перегрузку метода базового класса в производном классе (с вызовом метода базового класса и без такого вызова)");
+
+			Person PersonFor3 = new Person("Попова", "Ирина", "Андреевна");
+			Teacher TeacherFor3 = new Teacher("Иванова", "Елена", "Сергеевна");
+			Student StudentFor3 = new Student();
+			StudentFor3.Set("Буянов", "Виталий", "Юрьевич");
+
+			PersonFor3.OutputPerson();
+			TeacherFor3.OutputTeacher();
+			StudentFor3.OutputStudent();
+
+			PersonFor3.SayHello();
+			TeacherFor3.SayHello();
+			StudentFor3.SayHello();
+			Console.WriteLine("\n");
+
+			Console.WriteLine("4) Продемонстрировать в конструкторе производного класса с параметрами вызов конструктора базового класса");
+
+			Teacher TeacherFor4 = new Teacher("Андреев", "Сергей", "Васильевич");
+			TeacherFor4.OutputTeacher();
+			Console.WriteLine("\n");
+
+			Console.WriteLine("6) Заменить методы Display используя метод toString для C#");
+			Teacher TeacherFor6 = new Teacher("Жуков", "Виталий", "Васильевич");
+			Console.WriteLine("ФИО преподавателя: " + TeacherFor6.ToString());
+			Console.WriteLine("\n");
+
+			Console.WriteLine("7) Придумать разумное использование виртуальных функций и создать их в вашем проекте. Вызов виртуальной функции продемонстрировать через ее вызов не виртуальной функцией базового класса и через динамические объекты базового и производного классов после присваивания указателя.");
+			Person PersonFor7 = new Person("Иванова", "Марина", "Витальевна");
+			Teacher TeacherFor7 = new Teacher("Попова", "Ирина", "Андреевна");
+
+			PersonFor7.OutputPerson();
+			TeacherFor7.OutputTeacher();
+			Console.WriteLine("");
+			PersonFor7.SayHello();
+			TeacherFor7.SayHello();
+
+			Person PersoneFor7Uk1 = TeacherFor7;
+			Teacher TeacherFor7Uk = TeacherFor7;
+			Person PersoneFor7Uk2 = PersonFor7;
+
+			Console.WriteLine("Объект класса Учитель");
+			TeacherFor7.OutputTeacher();
+			Console.WriteLine("");
+			Console.WriteLine("Указатель класса Персона на класс Учитель");
+			PersoneFor7Uk1.OutputPerson();
+			Console.WriteLine("");
+			Console.WriteLine("Указатель класса Персона на класс Учитель");
+			PersoneFor7Uk2.OutputPerson();
+			Console.WriteLine("");
+			Console.WriteLine("Вызов виртуальной функции через не виртуальную базового класса");
+			Console.WriteLine("от объекта класса Учитель");
+			TeacherFor7.SayHello();
+			Console.WriteLine("");
+			Console.WriteLine("Вызов виртуальной функции через не виртуальную базового класса");
+			Console.WriteLine("от объекта класса Персона");
+			PersonFor7.SayHello();
+			Console.WriteLine("");
+			Console.WriteLine("от указателя Персона на объект класса Учитель");
+			Console.WriteLine(PersoneFor7Uk1.WhoIs());
+			Console.WriteLine("");
+			Console.WriteLine("от указателя Персона на объект класса Персона");
+			Console.WriteLine(PersoneFor7Uk2.WhoIs());
+			Console.WriteLine("");
+			Console.WriteLine("от указателя Учитель на объект класса Учитель");
+			Console.WriteLine(TeacherFor7Uk.WhoIs());
+
+			/*
 			Mark[] MarkFor11_1 = new Mark[5];
 			Mark[,] MarkFor11_2 = new Mark[2,2];
 
@@ -42,7 +159,7 @@ namespace Lab6_3sem
 				for (int j = 0; j < 2; j++)
 					MarkFor11_2[i, j].OutputMark();
 			Console.WriteLine();
-			/*
+			
 			Mark mark1 = new Mark();
 			Console.WriteLine("Лабораторная 10\n");
 			Console.WriteLine("Придумать разумное использование в ваших проектах защищенных блоков (try-блоки), перехватов исключений (catch-блоки) и инициализации исключений (инструкция throw)\n");
